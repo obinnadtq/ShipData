@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ShipData.Data;
+using ShipData.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,7 +43,7 @@ namespace ShipData
             using(var db = new ApplicationDbContext())
             {
                 db.Database.Migrate();
-                var ships = db.Ships.ToList();
+                List<Ship> ships = db.Ships.ToList();
             }
         }
     }
