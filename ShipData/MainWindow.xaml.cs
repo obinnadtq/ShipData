@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using ShipData.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +25,25 @@ namespace ShipData
         public MainWindow()
         {
             InitializeComponent();
+
+            ReadShipData();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            NewShipWindow newShipWindow = new NewShipWindow();
+            newShipWindow.ShowDialog();
+
+            ReadShipData();
+        }
+
+        void ReadShipData()
+        {
+            using(var db = new ApplicationDbContext())
+            {
+                db.Database.Migrate();
+                var ships = db.Ships.ToList();
+            }
         }
     }
 }
