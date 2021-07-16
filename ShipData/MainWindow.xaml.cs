@@ -23,9 +23,13 @@ namespace ShipData
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        List<Ship> ships;
         public MainWindow()
         {
             InitializeComponent();
+
+            ships = new List<Ship>();
 
             ReadShipData();
         }
@@ -40,11 +44,29 @@ namespace ShipData
 
         void ReadShipData()
         {
-            using(var db = new ApplicationDbContext())
+            using (var db = new ApplicationDbContext())
             {
                 db.Database.Migrate();
-                List<Ship> ships = db.Ships.ToList();
+                ships = db.Ships.ToList();
             }
+
+            if(ships != null)
+            {
+                shipListView.ItemsSource = ships;
+            }
+        }
+
+        private void shipListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Ship selectedShip = (Ship)shipListView.SelectedItem;
+
+            if(selectedShip != null)
+            {
+                ShipDetailsWindow shipDetailsWindow = new ShipDetailsWindow(selectedShip);
+                shipDetailsWindow.ShowDialog();
+            }
+
+            ReadShipData();
         }
     }
 }

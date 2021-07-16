@@ -19,6 +19,5 @@ namespace ShipData.Model
         [Required, Column("Shipcode")]
         public string Code { get; set; }
 
-
     }
 }

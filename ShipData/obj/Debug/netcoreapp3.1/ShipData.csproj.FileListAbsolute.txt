@@ -60,3 +60,5 @@ C:\Users\kimbe\Desktop\Obinna\ShipData\ShipData\bin\Debug\netcoreapp3.1\runtimes
 C:\Users\kimbe\Desktop\Obinna\ShipData\ShipData\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\e_sqlite3.dll
 C:\Users\kimbe\Desktop\Obinna\ShipData\ShipData\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\e_sqlite3.dll
 C:\Users\kimbe\Desktop\Obinna\ShipData\ShipData\obj\Debug\netcoreapp3.1\ShipData.csproj.CopyComplete
+C:\Users\kimbe\Desktop\Obinna\ShipData\ShipData\obj\Debug\netcoreapp3.1\ShipDetailsWindow.g.cs
+C:\Users\kimbe\Desktop\Obinna\ShipData\ShipData\obj\Debug\netcoreapp3.1\ShipDetailsWindow.baml

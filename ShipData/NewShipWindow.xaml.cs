@@ -20,15 +20,9 @@ namespace ShipData
     /// </summary>
     public partial class NewShipWindow : Window
     {
-        private readonly ApplicationDbContext _db;
         public NewShipWindow()
         {
             InitializeComponent();
-        }
-
-        public NewShipWindow(ApplicationDbContext db)
-        {
-            _db = db;
         }
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
@@ -37,8 +31,8 @@ namespace ShipData
             Ship ship = new Ship()
             {
                 Name = shipNameTextBox.Text,
-                Length = Convert.ToInt32(shipLengthTextBox.Text),
-                Width = Convert.ToInt32(shipWidthTextBox.Text),
+                Length = Convert.ToDouble(shipLengthTextBox.Text),
+                Width = Convert.ToDouble(shipWidthTextBox.Text),
                 Code = shipCodeTextBox.Text
             };
 

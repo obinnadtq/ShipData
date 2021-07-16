@@ -5,9 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ShipData"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="400" Width="525">
     <StackPanel Margin="10">
         <Button Content="New Ship"
                 Click="Button_Click"/>
+        <ListView x:Name="shipListView"
+                  Height="280"
+                  SelectionChanged="shipListView_SelectionChanged"
+                  Margin="0 5 0 0">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Name }" 
+                                   FontSize="20"
+                                   FontWeight="Bold"/>
+                        <TextBlock Text="{Binding Length}"
+                                   FontSize="15"/>
+                        <TextBlock Text="{Binding Width}"
+                                   FontSize="15"/>
+                        <TextBlock Text="{Binding Code}"
+                                   FontSize="15"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </StackPanel>
 </Window>
