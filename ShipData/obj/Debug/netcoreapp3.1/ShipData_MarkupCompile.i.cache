@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
 C:\Users\kimbe\Desktop\Obinna\ShipData\ShipData\App.xaml
-3-1414846182
+4-1106625696
 
-121671313486
+131199991577
 212472182194
-MainWindow.xaml;NewShipWindow.xaml;ShipDetailsWindow.xaml;
+Controls\ShipControl.xaml;MainWindow.xaml;NewShipWindow.xaml;ShipDetailsWindow.xaml;
 
 False
 

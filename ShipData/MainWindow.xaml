@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ShipData"
+        xmlns:uc="clr-namespace:ShipData.Controls"
         mc:Ignorable="d"
         Title="MainWindow" Height="400" Width="525">
     <StackPanel Margin="10">
@@ -13,19 +14,14 @@
                   Height="280"
                   SelectionChanged="shipListView_SelectionChanged"
                   Margin="0 5 0 0">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                </Style>
+            </ListView.ItemContainerStyle>
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel>
-                        <TextBlock Text="{Binding Name }" 
-                                   FontSize="20"
-                                   FontWeight="Bold"/>
-                        <TextBlock Text="{Binding Length}"
-                                   FontSize="15"/>
-                        <TextBlock Text="{Binding Width}"
-                                   FontSize="15"/>
-                        <TextBlock Text="{Binding Code}"
-                                   FontSize="15"/>
-                    </StackPanel>
+                    <uc:ShipControl Ship="{Binding}"/>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
